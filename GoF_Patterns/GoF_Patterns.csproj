@@ -6,9 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Create\" />
     <Folder Include="Behavior\" />
-    <Folder Include="Struct\" />
+    <Folder Include="Create\" />
   </ItemGroup>
 
 </Project>
