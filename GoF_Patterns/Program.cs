@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoF_Patterns.Struct.Decorator;
+using System;
 
 namespace GoF_Patterns
 {
@@ -6,7 +7,9 @@ namespace GoF_Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            new ConcreteDecoratorB(new ConcreteDecoratorA(new DecoratedComponent()))
+                .SomeAction();
+            Console.ReadKey();
         }
     }
 }
