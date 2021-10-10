@@ -10,6 +10,5 @@ namespace GoF_Patterns.Create.Abstract_Factory
     {
         public abstract AbstractProductA GetProductA();
         public abstract AbstractProductB GetProductB();
-        public abstract void FactoryMethod();
     }
 }
