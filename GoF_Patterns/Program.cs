@@ -1,6 +1,7 @@
 ﻿using GoF_Patterns.Behavior.Command;
 using GoF_Patterns.Behavior.Iterator;
 using GoF_Patterns.Behavior.Strategy;
+using GoF_Patterns.Behavior.Visitor;
 using GoF_Patterns.Struct.Decorator;
 using System;
 
@@ -27,6 +28,10 @@ namespace GoF_Patterns
 
             foreach(var item in new ReverceIterator(1, 2, 3))
                 Console.Write(item);
+            Console.WriteLine(string.Empty);
+            Console.WriteLine(string.Empty);
+
+            new ObjectForVisit().Accept(new Visitor());
             Console.WriteLine(string.Empty);
 
             Console.ReadKey();
