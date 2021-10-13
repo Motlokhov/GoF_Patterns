@@ -1,4 +1,5 @@
 ﻿using GoF_Patterns.Behavior.Command;
+using GoF_Patterns.Behavior.Iterator;
 using GoF_Patterns.Behavior.Strategy;
 using GoF_Patterns.Struct.Decorator;
 using System;
@@ -22,6 +23,10 @@ namespace GoF_Patterns
             commandClient.FirstInvoke();
             commandClient.SecondInvoke();
             commandClient.ThirdInvoke();
+            Console.WriteLine(string.Empty);
+
+            foreach(var item in new ReverceIterator(1, 2, 3))
+                Console.Write(item);
             Console.WriteLine(string.Empty);
 
             Console.ReadKey();
