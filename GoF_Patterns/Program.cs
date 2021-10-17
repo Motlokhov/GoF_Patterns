@@ -2,6 +2,7 @@
 using GoF_Patterns.Behavior.Iterator;
 using GoF_Patterns.Behavior.Strategy;
 using GoF_Patterns.Behavior.Visitor;
+using GoF_Patterns.Create.Builder;
 using GoF_Patterns.Struct.Decorator;
 using System;
 
@@ -32,6 +33,18 @@ namespace GoF_Patterns
             Console.WriteLine(string.Empty);
 
             new ObjectForVisit().Accept(new Visitor());
+            Console.WriteLine(string.Empty);
+
+            Director director = new Director();
+
+            CarBuilder carBuilder = new();
+            director.MakeSportCar(carBuilder);
+            Car sportCar = carBuilder.GetResult();
+
+            CarManualBuilder carManualBuilder = new();
+            director.MakeSportCar(carManualBuilder);
+            CarManual carManual = carManualBuilder.GetResult();
+            Console.WriteLine("Builder pattern end");
             Console.WriteLine(string.Empty);
 
             Console.ReadKey();
