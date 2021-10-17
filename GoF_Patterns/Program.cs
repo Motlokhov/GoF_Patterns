@@ -3,6 +3,7 @@ using GoF_Patterns.Behavior.Iterator;
 using GoF_Patterns.Behavior.Strategy;
 using GoF_Patterns.Behavior.Visitor;
 using GoF_Patterns.Create.Builder;
+using GoF_Patterns.Create.Singleton;
 using GoF_Patterns.Struct.Decorator;
 using System;
 
@@ -46,6 +47,9 @@ namespace GoF_Patterns
             CarManual carManual = carManualBuilder.GetResult();
             Console.WriteLine("Builder pattern end");
             Console.WriteLine(string.Empty);
+
+            Singleton.Instance.Value = "I'm alive";
+            Console.WriteLine(Singleton.Instance.Value);
 
             Console.ReadKey();
         }
