@@ -1,5 +1,6 @@
 ﻿using GoF_Patterns.Behavior.Command;
 using GoF_Patterns.Behavior.Iterator;
+using GoF_Patterns.Behavior.Mediator;
 using GoF_Patterns.Behavior.Strategy;
 using GoF_Patterns.Behavior.Visitor;
 using GoF_Patterns.Create.Builder;
@@ -50,6 +51,11 @@ namespace GoF_Patterns
 
             Singleton.Instance.Value = "I'm alive";
             Console.WriteLine(Singleton.Instance.Value);
+            Console.WriteLine(string.Empty);
+
+            ConcreteMediator mediator = new ConcreteMediator();
+            mediator.Button.Changed();
+            mediator.Button.Changed();
 
             Console.ReadKey();
         }
