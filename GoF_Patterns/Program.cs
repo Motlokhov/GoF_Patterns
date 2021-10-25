@@ -1,12 +1,14 @@
 ﻿using GoF_Patterns.Behavior.Command;
 using GoF_Patterns.Behavior.Iterator;
 using GoF_Patterns.Behavior.Mediator;
+using GoF_Patterns.Behavior.Memento;
 using GoF_Patterns.Behavior.Strategy;
 using GoF_Patterns.Behavior.Visitor;
 using GoF_Patterns.Create.Builder;
 using GoF_Patterns.Create.Singleton;
 using GoF_Patterns.Struct.Decorator;
 using System;
+using static GoF_Patterns.Behavior.Memento.MementoBox.Memento;
 
 namespace GoF_Patterns
 {
@@ -56,6 +58,12 @@ namespace GoF_Patterns
             ConcreteMediator mediator = new ConcreteMediator();
             mediator.Button.Changed();
             mediator.Button.Changed();
+            Console.WriteLine(string.Empty);
+
+            Author author = new Author();
+            MementoBox careTaker = author.SaveState();
+            author.ChangeState(1, 1, 1);
+            author.RollbackState(careTaker);
 
             Console.ReadKey();
         }
