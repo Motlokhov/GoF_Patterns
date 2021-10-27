@@ -2,6 +2,7 @@
 using GoF_Patterns.Behavior.Iterator;
 using GoF_Patterns.Behavior.Mediator;
 using GoF_Patterns.Behavior.Memento;
+using GoF_Patterns.Behavior.Observer;
 using GoF_Patterns.Behavior.Strategy;
 using GoF_Patterns.Behavior.Visitor;
 using GoF_Patterns.Create.Builder;
@@ -64,6 +65,17 @@ namespace GoF_Patterns
             MementoBox careTaker = author.SaveState();
             author.ChangeState(1, 1, 1);
             author.RollbackState(careTaker);
+            Console.WriteLine(string.Empty);
+
+            ConcreteModel model = new ConcreteModel();
+            IntSquareObserver intSquare = new IntSquareObserver();
+            IntSumObserver intSum = new IntSumObserver();
+            model.AddObserver(intSquare);
+            model.AddObserver(intSum);
+            intSquare.SetNotifier(model);
+            intSum.SetNotifier(model);
+            model.X = 2;
+            model.X = 5;
 
             Console.ReadKey();
         }
